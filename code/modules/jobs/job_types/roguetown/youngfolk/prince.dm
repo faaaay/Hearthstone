@@ -10,7 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "Born into the royal family or at least into its good graces, your heritage has bought you a \"free\" ride through life. You’ve never felt the gnawing of the winter, never known the bite of hunger and certainly have never known a honest day's work. You are as free as any bird in the sky, and you may revel in your debauchery for as long as your parents remain in their favourable position: But someday you’ll have to grow up, and that will be the day your carelessness will cost you more than a few mammons."
+	tutorial = "Born into the royal family, your heritage has bought you a \"free\" ride through life. You’ve never felt the gnawing of the winter, never known the bite of hunger and certainly have never known a honest day's work. You are as free as any bird in the sky, and you may revel in your debauchery for as long as your parents remain in their favourable position: But someday you’ll have to grow up, and that will be the day your carelessness will cost you more than a few mammons."
 
 	outfit = /datum/outfit/job/roguetown/prince
 	display_order = JDO_PRINCE
