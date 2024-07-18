@@ -20,7 +20,7 @@
 	if(in_use) // Someone's already going in.
 		return
 	var/mob/living/carbon/human/departing_mob = dropping
-	var/datum/job/mob_job = SSjob.GetJob(departing_mob.mind.assigned_role)
+	var/datum/job/mob_job
 	if(departing_mob != user && departing_mob.client)
 		to_chat(user, "<span class='warning'>This one retains their free will. It's their choice if they want to leave the round or not.</span>")
 		return
@@ -28,9 +28,6 @@
 		return
 	if(user.incapacitated() || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
-	if(departing_mob.mind && considered_afk(departing_mob.mind))
-		to_chat(user, "<span class='warning'>This mind has only recently departed. Wait at most two minutes before sending this character out of the round.</span>")
-		return
 	user.visible_message("<span class='warning'>[user] [departing_mob == user ? "is trying to leave for the lower decks!" : "is trying to send [departing_mob] to the lower decks!"]</span>", "<span class='notice'>You [departing_mob == user ? "are trying to go to the lower decks." : "are trying to send [departing_mob] to the lower decks."]</span>")
 	in_use = TRUE
 	if(!do_after(user, 50, target = src))
@@ -39,7 +36,8 @@
 	in_use = FALSE
 	update_icon()
 	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
-	if(departing_mob.mind && mob_job)
+	if(departing_mob.mind)
+		mob_job = SSjob.GetJob(departing_mob.mind.assigned_role)
 		mob_job.current_positions = max(0, mob_job.current_positions - 1)
 	if(!length(departing_mob.contents))
 		dat += " none."
