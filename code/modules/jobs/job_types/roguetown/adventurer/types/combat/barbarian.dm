@@ -107,17 +107,18 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(0,1), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(4), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/labor/fishing, pick(0,1), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			belt = /obj/item/storage/belt/rogue/leather
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -125,6 +126,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			backr = /obj/item/storage/backpack/rogue/satchel
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			if(prob(33))
 				armor = /obj/item/clothing/suit/roguetown/armor/leather
 			else
