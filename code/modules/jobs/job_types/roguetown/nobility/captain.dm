@@ -18,7 +18,7 @@
 	outfit = /datum/outfit/job/roguetown/captain
 
 	give_bank_account = 26
-	min_pq = 0
+	min_pq = 5
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard2.ogg'
@@ -157,7 +157,7 @@
 	if(accept_message)
 		recruit.say(accept_message, forced = "[name]")
 	if(new_role)
-		recruit.job = new_role
+		recruit.funnyrole = new_role
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
