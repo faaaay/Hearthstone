@@ -5,7 +5,7 @@
 	name = "Aasimar"
 	id = "aasimar"
 	desc = "<b>Aasimar</b><br>\
-	Aasimar are born of a rare union between Humans and Angels. \
+	Aasimar are born of a rare union between Mortals and Angels. \
 	They bear the mark of their celestial touch through many varying physical features. \
 	Their looks resemble the traditional characteristics of whichever of the Gods the Angel parent was associated with. \
 	Most commonly, Aasimar are similar to Humans, albeit taller, and possess uncanny beauty. \
@@ -52,14 +52,59 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
-		/datum/customizer/organ/testicles/human,
-		/datum/customizer/organ/penis/human,
-		/datum/customizer/organ/breasts/human,
-		/datum/customizer/organ/belly/human,
-		/datum/customizer/organ/vagina/human,
+		/datum/customizer/organ/tail/anthro,
+		/datum/customizer/organ/tail_feature/anthro,
+		/datum/customizer/organ/snout/anthro,
+		/datum/customizer/organ/ears/anthro,
+		/datum/customizer/organ/horns/anthro,
+		/datum/customizer/organ/frills/anthro,
+		/datum/customizer/organ/wings/anthro,
+		/datum/customizer/organ/neck_feature/anthro,
+		/datum/customizer/organ/testicles/anthro,
+		/datum/customizer/organ/penis/anthro,
+		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/vagina/anthro,
 		)
+	body_marking_sets = list(
+		/datum/body_marking_set/none,
+		/datum/body_marking_set/belly,
+		/datum/body_marking_set/bellysocks,
+		/datum/body_marking_set/tiger,
+		/datum/body_marking_set/tiger_dark,
+)
 	body_markings = list(
 		/datum/body_marking/tonage,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
+		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
+	)
+	descriptor_choices = list(
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin_all,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
 	)
 	languages = list(
 		/datum/language/common,
