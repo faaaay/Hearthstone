@@ -20770,6 +20770,11 @@
 /obj/item/roguegem/random,
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/under/cavewet/bogcaves/sunkencity/psydon)
+"vEg" = (
+/obj/structure/bookcase/random,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/magician)
 "vES" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -508116,7 +508121,7 @@ fkC
 eFa
 qas
 kkh
-mbK
+vEg
 wpr
 mfK
 fkC
