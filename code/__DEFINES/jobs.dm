@@ -221,6 +221,7 @@
 #define JDO_CLERK 3.1
 #define JDO_BAILIFF 4
 #define JDO_COUNCILLOR 4.1
+#define JDO_ALDERMAN 5
 #define JDO_NOBLE 5
 
 // Courtiers
