@@ -2603,6 +2603,13 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"bwg" = (
+/obj/structure/closet/crate/chest,
+/obj/item/seeds/potato,
+/obj/item/seeds/potato,
+/obj/item/seeds/potato,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
 "bwv" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -2808,6 +2815,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
+"bEQ" = (
+/obj/structure/closet/crate/chest,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/sugarcane,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
 "bFr" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -305302,7 +305316,7 @@ uaL
 fxx
 fxx
 wOD
-ktX
+bwg
 lJX
 ltT
 oRU
@@ -305704,7 +305718,7 @@ uaL
 fxx
 fxx
 hSV
-ktX
+bEQ
 ltT
 ltT
 lJX
