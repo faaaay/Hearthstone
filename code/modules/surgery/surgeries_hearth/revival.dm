@@ -21,10 +21,9 @@
 	skill_min = SKILL_LEVEL_JOURNEYMAN
 
 /datum/surgery_step/infuse_lux/validate_target(mob/user, mob/living/target, target_zone, datum/intent/intent)
-	to_chat(user, "upper")
 	. = ..()
 	if(target.stat < DEAD)
-		to_chat(user, "not dead")
+		to_chat(user, "They're not dead!")
 		return FALSE
 
 /datum/surgery_step/infuse_lux/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
@@ -43,6 +42,9 @@
 	display_results(user, target, span_notice("You succeed in restarting [target]'s hearth with the infusion of lux."),
 		"[user] works the lux into [target]'s innards.",
 		"[user] works the lux into [target]'s innards.")
+	if(!target.revive(full_heal = FALSE))
+		to_chat(user, span_warning("Nothing happens."))
+		return FALSE
 	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit()
 	if(underworld_spirit)
 		var/mob/dead/observer/ghost = underworld_spirit.ghostize()

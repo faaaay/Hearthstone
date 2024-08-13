@@ -28,8 +28,8 @@
 
 /datum/surgery_step/burn_rot/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	display_results(user, target, span_notice("I begin to burn the rot within [target]..."),
-		span_notice("[user] begins to scrape lux from [target]'s heart."),
-		span_notice("[user] begins to scrape lux from [target]'s heart."))
+		span_notice("[user] begins to burn the rot from [target]'s heart."),
+		span_notice("[user] begins to burn the rot from [target]'s heart."))
 	return TRUE
 
 // most of this is copied from the Cure Rot spell
