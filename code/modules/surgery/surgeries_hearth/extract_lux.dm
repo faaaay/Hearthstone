@@ -3,6 +3,7 @@
 		/datum/surgery_step/incise,
 		/datum/surgery_step/clamp,
 		/datum/surgery_step/retract,
+		/datum/surgery_step/saw,
 		/datum/surgery_step/extract_lux,
 		/datum/surgery_step/cauterize
 	)
@@ -20,23 +21,15 @@
 	time = 8 SECONDS
 	surgery_flags = SURGERY_BLOODY | SURGERY_INCISED | SURGERY_CLAMPED | SURGERY_RETRACTED
 	skill_min = SKILL_LEVEL_APPRENTICE
-	skill_median = SKILL_EXP_EXPERT
 
-/datum/surgery_step/extract_lux/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	display_results(user, target, span_notice("extracted!!!"),
-		"yay!!!",
-		"yay!!!")
-/*
 /datum/surgery_step/extract_lux/validate_target(mob/user, mob/living/target, target_zone, datum/intent/intent)
-	to_chat(user, "reached upper")
 	. = ..()
-	to_chat(user, "reached proc")
-	if(!.)
-		to_chat(user, "!.")
-		return
-	if(target.mob_biotypes && MOB_UNDEAD)
-		to_chat(user, "undead idiot")
-		return FALSE
+
+/datum/surgery_step/extract_lux/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	display_results(user, target, span_notice("I begin to scrape lux from [target]'s heart..."),
+		span_notice("[user] begins to scrape lux from [target]'s heart."),
+		span_notice("[user] begins to scrape lux from [target]'s heart."))
+	return TRUE
 
 /datum/surgery_step/extract_lux/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	target.emote("painscream")
@@ -51,5 +44,4 @@
 			"[user] extracts lux from [target]'s innards.")
 		var/obj/item/reagent_containers/lux/L = new /obj/item/reagent_containers/lux(target.loc)
 		target.apply_status_effect(/datum/status_effect/debuff/devitalised)
-		return TRUE
-*/
+	return TRUE

@@ -2,8 +2,6 @@
 /datum/surgery/cure_rot
 	steps = list(
 		/datum/surgery_step/incise,
-		/datum/surgery_step/clamp,
-		/datum/surgery_step/retract,
 		/datum/surgery_step/burn_rot,
 		/datum/surgery_step/cauterize
 	)
@@ -14,31 +12,31 @@
 	name = "burn rot"
 	implements = list(
 		TOOL_CAUTERY = 85,
+		/obj/item/clothing/neck/roguetown/psicross = 85,
 		TOOL_WELDER = 70,
 		TOOL_HOT = 35,
 	)
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	time = 8 SECONDS
-	surgery_flags = SURGERY_BLOODY | SURGERY_INCISED | SURGERY_CLAMPED | SURGERY_RETRACTED
+	surgery_flags = SURGERY_INCISED
 	skill_min = SKILL_LEVEL_APPRENTICE
-	skill_median = SKILL_EXP_EXPERT
-
-/datum/surgery_step/burn_rot/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	display_results(user, target, span_notice("burned!!!"),
-		"yay!!!",
-		"yay!!!")
 
 /datum/surgery_step/burn_rot/validate_target(mob/user, mob/living/target, target_zone, datum/intent/intent)
 	to_chat(user, "reached upper")
 	. = ..()
 	to_chat(user, "reached proc")
-	if(!.)
-		to_chat(user, "!.")
-		return
+
+/datum/surgery_step/burn_rot/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	display_results(user, target, span_notice("I begin to burn the rot within [target]..."),
+		span_notice("[user] begins to scrape lux from [target]'s heart."),
+		span_notice("[user] begins to scrape lux from [target]'s heart."))
+	return TRUE
 
 // most of this is copied from the Cure Rot spell
 /datum/surgery_step/burn_rot/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	var/burndam = user
+	var/burndam = 20
+	if(user.mind)
+		burndam -= (user.mind.get_skill_level(/datum/skill/misc/medicine) * 3)
 	var/unzombification_pq = PQ_GAIN_UNZOMBIFY 
 	var/datum/antagonist/zombie/was_zombie = target.mind?.has_antag_datum(/datum/antagonist/zombie) 
 	var/has_rot = was_zombie
@@ -49,8 +47,7 @@
 				has_rot = TRUE
 				break
 	if(was_zombie)
-		if(was_zombie.become_rotman && prob(95)) //95% chance to NOT become a rotman
-			was_zombie.become_rotman = FALSE
+		was_zombie.become_rotman = FALSE
 		target.mind.remove_antag_datum(/datum/antagonist/zombie)
 		target.Unconscious(20 SECONDS)
 		target.emote("breathgasp")
@@ -70,6 +67,7 @@
 			rotty.update_disabled()
 	target.update_body()
 	display_results(user, target, span_notice("You burn away the rot inside of [target]."),
-		"[user] takes a cautery to the rot within [target].",
-		"[user] takes a cautery to the rot within [target].")
-
+		"[user] burns the rot within [target].",
+		"[user] takes a [tool] to [target]'s innards.")
+	target.take_bodypart_damage(null, burndam)
+	return TRUE
