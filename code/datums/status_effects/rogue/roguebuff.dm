@@ -113,6 +113,7 @@
 
 /datum/status_effect/buff/weed
 	id = "weed"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/weed
 	effectedstats = list("intelligence" = 2,"speed" = -2,"fortune" = 2)
 	duration = 10 SECONDS
 
