@@ -7,7 +7,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/vitae = 5)
-	grind_reagents = list(/datum/reagent/vitae = 5)
+	grind_results = list(/datum/reagent/vitae = 5)
 	sellprice = 50
 
 /datum/reagent/vitae
