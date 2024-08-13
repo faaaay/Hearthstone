@@ -21,11 +21,6 @@
 	surgery_flags = SURGERY_INCISED
 	skill_min = SKILL_LEVEL_APPRENTICE
 
-/datum/surgery_step/burn_rot/validate_target(mob/user, mob/living/target, target_zone, datum/intent/intent)
-	to_chat(user, "reached upper")
-	. = ..()
-	to_chat(user, "reached proc")
-
 /datum/surgery_step/burn_rot/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	display_results(user, target, span_notice("I begin to burn the rot within [target]..."),
 		span_notice("[user] begins to burn the rot from [target]'s heart."),
