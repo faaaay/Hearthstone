@@ -4,9 +4,9 @@
 /datum/species/moth
 	name = "Fluvian"
 	id = "moth"
-	desc = "A race that hails from the far-away land of Deine-Coad, a grassy, forested land. We are an astute, proud people, albiet slightly weak of constitution. \
-	The creation myth of the Fluvian are that Eora, to emulate even a shred of her grace, plucked a palmful of moon-dust from Noc's mane and salted it upon Humens and other Creachers to create something which mimicked a fraction of her beauty. \
-	We are delicate of constiution and strength, but intellegent, and agile. Due to our unique biology, the males and females of our race are equal in strength."
+	desc = "A race that hails from the far-away land of Deine-Coad, a grassy, forested land. We are an astute, proud people, albeit slightly weak of constitution. \
+	The creation myth of the Fluvian is that Eora, to emulate even a shred of her grace, plucked a palmful of moon-dust from Noc's mane and salted it upon Humens and other Creachers to create something which mimicked a fraction of her beauty. \
+	We are delicate of constiution and strength, but intelligent and agile. Due to our unique biology, the males and females of our race are equal in strength."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
