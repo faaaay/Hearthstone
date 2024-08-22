@@ -168,6 +168,14 @@
 	i_type = "Weapons"
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/cane
+	name = "Capped Cane (+1 Small Log)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/mace/cane
+	craftdiff = 2
+	i_type = "Weapons"
+
 /// ADVANCED WEAPONS
 // Craft Difficulty: 3
 

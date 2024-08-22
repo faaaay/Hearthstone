@@ -137,6 +137,20 @@
 	damfactor = 0.9
 	item_d_type = "stab"
 
+/datum/intent/mace/jab
+	name = "thrust"
+	blade_class = BCLASS_BLUNT
+	attack_verb = list("thrusts", "jabs")
+	animname = "stab"
+	icon_state = "instab"
+	warnie = "mobwarning"
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	chargetime = 0
+	swingdelay = 0
+	penfactor = 15
+	damfactor = 0.8
+	item_d_type = "stab"
+
 /obj/item/rogueweapon/mace/woodclub
 	force = 15
 	force_wielded = 18
@@ -306,3 +320,17 @@
 /obj/item/rogueweapon/mace/steel/morningstar
 	icon_state = "morningstar"
 
+/obj/item/rogueweapon/mace/cane
+	force = 10
+	force_wielded = 15
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/jab)
+	name = "cane"
+	desc = "A short wooden cane capped in steel, useful for keeping yourself upright or knocking others down."
+	icon_state = "cane"
+	item_state = "stick_greyscale"
+	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BACK
+	blade_dulling = DULLING_BASHCHOP
+	smeltresult = /obj/item/ingot/steel
+	walking_stick = TRUE
+	wdefense = 7
+	wbalance = 0

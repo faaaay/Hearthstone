@@ -32,7 +32,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	beltl = /obj/item/keyring/sheriff
-	beltr = /obj/item/rogueweapon/mace
+	beltr = /obj/item/rogueweapon/mace/cane
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/bailiff
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
