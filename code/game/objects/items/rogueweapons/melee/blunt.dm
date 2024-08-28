@@ -306,26 +306,3 @@
 /obj/item/rogueweapon/mace/steel/morningstar
 	icon_state = "morningstar"
 
-/obj/item/rogueweapon/mace/cane
-	force = 10
-	force_wielded = 15
-	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/jab)
-	name = "cane"
-	desc = "A short wooden cane capped in steel, useful for keeping yourself upright or knocking others down."
-	icon_state = "cane"
-	item_state = "stick_greyscale"
-	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BACK
-	blade_dulling = DULLING_BASHCHOP
-	smeltresult = /obj/item/ingot/steel
-	walking_stick = TRUE
-	wdefense = 7
-	wbalance = 0
-
-/obj/item/rogueweapon/mace/cane/getonmobprop(tag)
-	if("onbelt")
-		return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-	if("gen")
-		return list("shrink" = 0.6,"sx" = -6,"sy" = -1,"nx" = 8,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -23,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-	if("onbelt")
-		return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-	return ..()
