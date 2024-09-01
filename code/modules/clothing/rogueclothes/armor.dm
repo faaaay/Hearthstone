@@ -407,6 +407,9 @@
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = "#3c3a38"
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/white
+	color = CLOTHING_WHITE
+
 /obj/item/clothing/suit/roguetown/armor/workervest
 	name = "striped tunic"
 	desc = "This cheap tunic is often used by sturdy laborous men and women."
